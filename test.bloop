@@ -1,0 +1,11 @@
+put 10 into x
+put 20 into y
+put x + y * 2 into z
+print z
+if z > 30 then:
+    print "Inside if block"
+    print "big number"
+repeat 3 times:
+    print z
+    put z - 1 into z
+print "Done Testing"
