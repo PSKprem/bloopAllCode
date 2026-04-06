@@ -232,23 +232,21 @@ public class Parser {
     }
 
     private int peekIndentLevel() {
-    int tempPos = pos;
-    int count = 0;
+        int tempPos = pos;
+        int count = 0;
 
-    while (tempPos < tokens.size() &&
-           tokens.get(tempPos).getType() == TokenType.TAB) {
-        count++;
-        tempPos++;
+        while (tempPos < tokens.size() &&
+            tokens.get(tempPos).getType() == TokenType.TAB) {
+            count++;
+            tempPos++;
+        }
+
+        return count;
     }
 
-    return count;
-}
-
-private void consumeIndent(int count) {
-    for (int i = 0; i < count; i++) {
-        match(TokenType.TAB);
+    private void consumeIndent(int count) {
+        for (int i = 0; i < count; i++) {
+            match(TokenType.TAB);
+        }
     }
-}
-
-
 }
